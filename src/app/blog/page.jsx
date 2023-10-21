@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getData() {
-  /*   const res = await fetch("http://localhost:3000/api/posts", {
+  //http://localhost:3000/api
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
   });
 
@@ -12,29 +13,7 @@ async function getData() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json(); */
-  const fakeData = [
-    {
-      _id: 1,
-      img: "/1.png",
-      title: "Başlık 1",
-      desc: "Açıklama 1",
-    },
-    {
-      _id: 2,
-      img: "/2.png",
-      title: "Başlık 2",
-      desc: "Açıklama 2",
-    },
-    {
-      _id: 3,
-      img: "/3.png",
-      title: "Başlık 3",
-      desc: "Açıklama 3",
-    },
-    // Diğer sahte veri öğeleri...
-  ];
-  return fakeData;
+  return res.json();
 }
 
 const Blog = async () => {
