@@ -26,7 +26,7 @@
   bottom: 10px;
   font-size: 40px;
   font-weight: bold;
-  display: none;
+  color: #bbb;
 }
 
 .item:hover .title {
