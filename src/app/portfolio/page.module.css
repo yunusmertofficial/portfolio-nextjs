@@ -1,8 +1,9 @@
 .mainTitle {
-  font-size: 100px;
+  font-size: 90px;
 }
 
-.container {
+.selectTitle {
+  margin: 20px 0;
 }
 
 .items {
