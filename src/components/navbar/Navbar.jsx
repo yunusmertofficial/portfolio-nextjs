@@ -46,7 +46,7 @@ const Navbar = () => {
           src={Logo}
           width={350}
           className={styles.icon}
-          alt="Lama Dev Facebook Account"
+          alt="Yunus Emre Mert Logo"
         />
       </Link>
       <div className={styles.links}>
