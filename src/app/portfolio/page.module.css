@@ -1,0 +1,38 @@
+.mainTitle {
+  font-size: 100px;
+}
+
+.container {
+}
+
+.items {
+  display: flex;
+  gap: 50px;
+}
+
+.item {
+  border: 5px solid #bbb;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  background-size: cover !important;
+}
+
+.title {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  display: none;
+}
+
+.item:hover .title {
+  display: block;
+  color: #53c28b;
+}
+
+.img:hover {
+  filter: grayscale(100%);
+}
