@@ -26,7 +26,7 @@ const Portfolio = () => {
           />
           <span className={styles.title}>Websites</span>
         </Link>
-        <Link href="/portfolio/application" className={styles.item}>
+        <Link href="/portfolio/applications" className={styles.item}>
           <Image src="/apps.jpg" fill={true} alt="" className={styles.img} />
           <span className={styles.title}>Application</span>
         </Link>
