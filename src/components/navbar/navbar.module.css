@@ -5,17 +5,15 @@
   align-items: center;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 22px;
-}
-
 .links {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+.logo {
+  padding-top: 20px;
+}
 .logout {
   padding: 5px;
   border: none;

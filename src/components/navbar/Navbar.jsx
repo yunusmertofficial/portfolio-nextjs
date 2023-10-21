@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
+import Logo from "public/logo.png";
+import Image from "next/image";
 
 const Navbar = () => {
   const links = [
@@ -40,7 +42,12 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        lamamia
+        <Image
+          src={Logo}
+          width={350}
+          className={styles.icon}
+          alt="Lama Dev Facebook Account"
+        />
       </Link>
       <div className={styles.links}>
         {links.map((link) => (
