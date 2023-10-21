@@ -40,19 +40,19 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, mutate, error, isLoading } = useSWR(
-    `https://jsonplaceholder.typicode.com/posts`,
+    `/api/posts`,
     //?username=${session?.data?.user.name}
     fetcher
   );
 
-  /*   if (session.status === "loading") {
-    return <p>Loading...</p>;
-  } 
+  // if (session.status === "loading") {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (session.status === "unauthenticated") {
-    router?.push("/dashboard/login");
-  }
-*/
+  // if (session.status === "unauthenticated") {
+  //   router?.push("/dashboard/login");
+  // }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
@@ -61,26 +61,26 @@ const Dashboard = () => {
     const content = e.target[3].value;
 
     try {
-      await fetch("https://jsonplaceholder.typicode.com/posts", {
+      await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
           desc,
           img,
           content,
-          username: session.data.user.name,
+          username: "session.data.user.name",
         }),
       });
       mutate();
       e.target.reset();
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
       mutate();
@@ -89,7 +89,7 @@ const Dashboard = () => {
     }
   };
 
-  //if (session.status === "authenticated") {
+  // if (session.status === "authenticated") {
   return (
     <div className={styles.container}>
       <div className={styles.posts}>
