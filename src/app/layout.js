@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lama Dev",
+  title: "Yunus Emre Mert",
   description: "This is the description",
 };
 
