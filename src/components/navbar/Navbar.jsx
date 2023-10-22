@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
-import Logo from "public/logo.png";
+import Logo from "../../../public/logo.png";
 import Image from "next/image";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useSelectedLayoutSegment } from "next/navigation";
