@@ -1,15 +1,20 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Button from "@/components/Button/Button";
+import Button from "../../components/Button/Button";
+import getBase64 from "../../lib/getLocalBase64";
 
-const About = () => {
+const About = async () => {
+  const myBlurDataUrl = await getBase64("http://localhost:3000/blur.jpg");
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill={true}
+          blurDataURL={myBlurDataUrl}
+          placeholder="blur"
           alt=""
           className={styles.img}
         />
