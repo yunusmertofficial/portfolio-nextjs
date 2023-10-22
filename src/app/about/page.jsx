@@ -5,7 +5,9 @@ import Button from "../../components/Button/Button";
 import getBase64 from "../../lib/getLocalBase64";
 
 const About = async () => {
-  const myBlurDataUrl = await getBase64("http://localhost:3000/blur.jpg");
+  const myBlurDataUrl = await getBase64(
+    process.env.NEXT_PUBLIC_BASE_URL + "/blur.jpg"
+  );
 
   return (
     <div className={styles.container}>

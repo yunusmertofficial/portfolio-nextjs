@@ -2,17 +2,17 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
+import Post from "models/Post";
+import connect from "utils/db";
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
-    cache: "no-store",
-  });
+  try {
+    await connect();
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    const posts = await Post.find();
+    return posts;
+  } catch (err) {
+    throw new Error("Post not found");
   }
-
-  return res.json();
 }
 
 const Blog = async () => {
