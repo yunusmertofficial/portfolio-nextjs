@@ -98,7 +98,15 @@ const Dashboard = () => {
           : data?.map((post) => (
               <div className={styles.post} key={post._id}>
                 <div className={styles.imgContainer}>
-                  <Image src={post.img} alt="" width={200} height={100} />
+                  <Image
+                    src={post.img}
+                    alt=""
+                    width={200}
+                    height={100}
+                    quality={75}
+                    blurDataURL="/blur.jpg"
+                    placeholder="blur"
+                  />
                 </div>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <span
