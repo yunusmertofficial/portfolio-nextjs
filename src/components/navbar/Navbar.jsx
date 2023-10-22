@@ -6,9 +6,11 @@ import Logo from "../../../public/logo.png";
 import Image from "next/image";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useSelectedLayoutSegment } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const activeSegment = useSelectedLayoutSegment();
+  const session = useSession();
 
   const links = [
     {
@@ -53,8 +55,9 @@ const Navbar = () => {
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
         <Image
-          src={Logo}
+          src={"/logo.png"}
           width={350}
+          height={60}
           className={styles.icon}
           alt="Yunus Emre Mert Logo"
         />
@@ -72,9 +75,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button className={styles.logout} onClick={() => console.log("asda")}>
-          logout
-        </button>
+        {session.status === "authenticated" && (
+          <button className={styles.logout} onClick={signOut}>
+            Logout
+          </button>
+        )}
       </div>
     </div>
   );
