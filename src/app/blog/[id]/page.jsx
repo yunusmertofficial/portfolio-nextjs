@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -8,6 +9,10 @@ async function getData(id) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_BASE_URL + `/api/posts/${id}`,
     {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
       cache: "no-store",
     }
   );

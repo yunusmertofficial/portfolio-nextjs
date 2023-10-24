@@ -5,9 +5,6 @@ const nextConfig = {
     //  domains: ["images.pexels.com"],
     remotePatterns: [{ protocol: "https", hostname: "images.pexels.com" }],
   },
-  experimental: {
-    serverActions: true,
-  },
 };
 
 module.exports = nextConfig;

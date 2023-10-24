@@ -1,18 +1,23 @@
+export const dynamic = "force-dynamic";
 import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Post from "models/Post";
-import connect from "utils/db";
-async function getData() {
-  try {
-    await connect();
 
-    const posts = await Post.find();
-    return posts;
-  } catch (err) {
-    throw new Error("Post not found");
+async function getData() {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/posts`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return notFound();
   }
+
+  return res.json();
 }
 
 const Blog = async () => {
